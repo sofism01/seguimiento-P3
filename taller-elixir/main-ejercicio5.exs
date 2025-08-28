@@ -5,6 +5,9 @@ defmodule PeajeVehiculo do
   Retorna una tupla con {placa, tipo, tarifa_final}.
   """
 
+  @doc """
+  Solicita la placa, tipo y peso del vehículo, calcula la tarifa y muestra un mensaje con el resultado.
+  """
   def registrar do
     placa = UtilTest.input("Ingrese la placa del vehículo: ", :string)
     tipo = UtilTest.input("Ingrese el tipo de vehículo (Carro, Moto, Camión): ", :string)
