@@ -51,6 +51,9 @@ defmodule Main do
     Util.show_message("Lista de los elementos sumados es: #{inspect(suma)}")
   end
 
+  @doc """
+  Agrupa las personas por edad
+  """
   def agrupar_por_edad do
     personas = [
       %{nombre: "Anna", edad: 20},
