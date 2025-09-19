@@ -15,10 +15,8 @@ Función principal que ejecuta el conteo de elementos en una lista de ejemplo.
   @doc """
   Cuenta el número de elementos en una lista de forma recursiva.
   """
-  # Cláusula para lista vacía
   def contar_elementos([]), do: 0 #caso base
 
-  # Cláusula para lista no vacía (caso recursivo)
   def contar_elementos([_ | resto]), do: 1 + contar_elementos(resto) #llamado recursivo
 
 end
