@@ -22,6 +22,10 @@ def main do
   d1 = Detalle.crear(p1, 1)
   d2 = Detalle.crear(p2, 2)
   d3 = Detalle.crear(p3, 1)
+  Detalle.escribir_csv([d1, d2, d3], "detalles.csv")
+
+  listado_detalles = Detalle.leer_csv("detalles.csv")
+  IO.inspect(listado_detalles)
 
   v1 = Venta.crear(c1, [d1, d2, d3])
 

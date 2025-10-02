@@ -47,6 +47,8 @@ defmodule Cliente do
 
        end)
 
+       |> Enum.filter(& &1) # filtrar los nil
+
        {:error, reason} -> # Si hay un error al leer el archivo
         IO.puts("Error al leer el archivo: #{reason}") # mostrar mensaje de error
         []
