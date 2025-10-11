@@ -1,0 +1,5 @@
+codigo, nombre, precio, iva, precio_con_iva
+P001, Laptop, 1500000, 2.85e5, 1.785e6
+P002, Mouse, 25000, 4750.0, 29750.0
+P003, Teclado, 80000, 1.52e4, 9.52e4
+P004, Monitor, 450000, 8.55e4, 5.355e5
