@@ -1,9 +1,9 @@
 defmodule Proceso do
   @cantidad_procesos_internos 5
 @moduledoc """
-  Módulo para simular la ejecución de varios procesos con demoras específicas de forma secuencial.
+  Módulo para simular la ejecución de varios procesos con demoras específicas de forma paralela.
   """
-  
+
 @doc """
   Función principal para iniciar la simulación de procesos.
 """
@@ -18,9 +18,12 @@ end
   """
 def simulacion(cantidad_procesos_internos) do
 datos_prueba = [{"A", 2500}, {"\tB", 1500}, {"\t\tC", 500}, {"\t\t\tD", 3500}]
-Enum.each(datos_prueba, fn valor ->
-simulando_proceso(valor, cantidad_procesos_internos)
+tarea =
+Enum.map(datos_prueba, fn valor ->
+Task.async(fn -> simulando_proceso(valor, cantidad_procesos_internos) end)
 end)
+# Si se omite el último valor, por defecto es 5000 milisegundos
+Enum.each(tarea, &Task.await(&1, 100_000))
 end
 
 @doc """
