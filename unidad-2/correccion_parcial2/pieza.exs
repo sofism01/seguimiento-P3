@@ -120,15 +120,19 @@ defmodule Parcial do
   end
 
   # Punto 4: Función recursiva para eliminar duplicados por código, preservando primer orden
-  def eliminar_duplicados_recursivo(piezas), do: eliminar_duplicados_recursivo(piezas, [])
+  def eliminar_duplicados_recursivo(piezas) do
+    eliminar_duplicados_aux(piezas, [])
+  end
 
-  defp eliminar_duplicados_recursivo([], acc), do: Enum.reverse(acc)
+  defp eliminar_duplicados_aux([], acc) do
+    reversar_lista(acc, [])
+  end
 
-  defp eliminar_duplicados_recursivo([pieza | resto], acc) do
+  defp eliminar_duplicados_aux([pieza | resto], acc) do
     if codigo_existe_recursivo?(pieza.codigo, acc) do
-      eliminar_duplicados_recursivo(resto, acc)
+      eliminar_duplicados_aux(resto, acc)
     else
-      eliminar_duplicados_recursivo(resto, [pieza | acc])
+      eliminar_duplicados_aux(resto, [pieza | acc])
     end
   end
 
@@ -140,6 +144,11 @@ defmodule Parcial do
     else
       codigo_existe_recursivo?(codigo, resto)
     end
+  end
+
+  defp reversar_lista([], acc), do: acc
+  defp reversar_lista([head | tail], acc) do
+    reversar_lista(tail, [head | acc])
   end
 
 end
