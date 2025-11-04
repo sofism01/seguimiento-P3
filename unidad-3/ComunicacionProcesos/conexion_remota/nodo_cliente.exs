@@ -3,11 +3,11 @@ defmodule NodoCliente do
 Módulo que actúa como un nodo principal para enviar mensajes a un nodo secundario y recibir respuestas.
 """
 
-# Para ejecutar como modo remoto: elixir --name nodocliente@192.168.1.5 --cookie mi_cookie nodo_cliente.exs
+# Para ejecutar como modo remoto: elixir --name nodocliente@ 192.168.137.87 --cookie mi_cookie nodo_cliente.exs
 
 @nombre_servicio_local :servicio_respuesta
-@servicio_local {@nombre_servicio_local, :"nodocliente@192.168.1.5"}
-@nodo_remoto :"nodoservidor@192.168.1.5"
+@servicio_local {@nombre_servicio_local, :"nodocliente@ 192.168.137.87"}
+@nodo_remoto :"nodoservidor@ 192.168.137.87"
 @servicio_remoto {:servicio_cadenas, @nodo_remoto}
 # Lista de mensajes a procesar
 @mensajes [

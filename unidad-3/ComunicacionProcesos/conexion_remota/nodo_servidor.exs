@@ -4,7 +4,7 @@ Módulo que actúa como un nodo secundario para procesar mensajes de cadenas.
 """
 
 # Para ejecutar como modo remoto: elixir --name nodoservidor@localhost --cookie mi_cookie nodo_servidor.exs
-# -> Para conexion en diferentes máquinas: elixir --name nodoservidor@192.168.1.5 --cookie mi_cookie nodo_servidor.exs
+# -> Para conexion en diferentes máquinas: elixir --name nodoservidor@ 192.168.137.87 --cookie mi_cookie nodo_servidor.exs
 
 @nombre_servicio_local :servicio_cadenas
 
