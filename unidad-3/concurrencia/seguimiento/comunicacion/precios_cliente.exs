@@ -178,7 +178,7 @@ defmodule PreciosCliente do
     |> Enum.take(5)
     |> Enum.each(fn {nombre, precio_final} ->
       precio_str = Float.round(precio_final, 2)
-      IO.puts("  • #{nombre}: $#{precio_str}")
+      IO.puts("#{nombre}: $#{precio_str}")
     end)
 
     if length(resultados) > 5 do
