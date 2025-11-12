@@ -1,4 +1,4 @@
-defmodule Car do
+defmodule Car do #  elixir --sname carrera cliente_carrera.exs -> para ejecutar el cliente
   @moduledoc """
   Estructura para representar un auto en la carrera.
   """
